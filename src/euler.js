@@ -1,21 +1,23 @@
-export function Euler(number) {
+export function Fibonacci(number) {
   this.number = number;
 }
 
-Euler.prototype.multiples = function() {
-  var array = [];
-  for (var i = 1; i <= this.number; i += 1) {
-    array.push(i);
+Fibonacci.prototype.generate = function() {
+  var fib_array = [];
+  var previous_first = 0, previous_second = 1, next = 1;
+  while (previous_second + next <= this.number) {
+    next = previous_first + previous_second;
+    previous_first = previous_second;
+    previous_second = next;
+    fib_array.push(next);
   }
-
-  var new_array = [];
-  for (var j = 1; j < array.length; j++) {
-    if ((j % 3 === 0) || (j % 5 === 0)) {
-      new_array.push(j);
-    }
-  }
-  
-  var sum = new_array.reduce((x,y) => x + y, 0);
-
-  return sum;
+  console.log(fib_array);
+  return fib_array;
+  // for(var i = 1; i <= this.number; i++) {
+  //   next =  previous_first + previous_second;
+  //   previous_first = previous_second;
+  //   previous_second = next;
+  //   fib_array.push(next);
+  // }
+  // return fib_array;
 };

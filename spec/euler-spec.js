@@ -1,10 +1,10 @@
-import { Euler } from './../src/euler.js'
+import { Fibonacci } from './../src/euler.js'
 
-describe('Euler', function() {
+describe('Fibonacci', function() {
 
-  it('should return an array of multiples of 3 and 5', function() {
-    var input = new Euler(10)
-    expect(input.multiples()).toEqual(23)
+  it('should return an array of fibonacci numbers up to the input', function() {
+    var input = new Fibonacci(10)
+    expect(input.generate()).toEqual([1,2,3,5,8])
   });
 
 });
