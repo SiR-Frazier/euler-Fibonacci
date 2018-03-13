@@ -14,5 +14,8 @@ Euler.prototype.multiples = function() {
       new_array.push(j);
     }
   }
-  return new_array;
+  
+  var sum = new_array.reduce((x,y) => x + y, 0);
+
+  return sum;
 };
